@@ -165,6 +165,10 @@ if st.sidebar.button('決定'):
     ax2.set_title('Stdev')
     st.pyplot(fig)
 
+    fig.savefig('time.png')
+    with open("time.png", "rb") as file:
+        btn1 = st.download_button('イメージを保存', file_name='time.png', data=file, mime='image/png')
+
     """
     ## 人員の増減
     """
@@ -189,3 +193,7 @@ if st.sidebar.button('決定'):
     sns.heatmap(memb2, annot=True, fmt='.1f', cmap='Greens', vmax=3, vmin=0, ax=ax4)
     ax4.set_title('Stdev')
     st.pyplot(fig2)
+
+    fig2.savefig('member.png')
+    with open("member.png", "rb") as file2:
+        btn2 = st.download_button('イメージを保存', file_name='member.png', data=file2, mime='image/png')
